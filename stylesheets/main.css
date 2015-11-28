@@ -1,0 +1,344 @@
+/*https://en.wikipedia.org/wiki/Comparison_of_layout_engines_(Cascading_Style_Sheets)*/
+@-webkit-keyframes changeBG {
+	0% {
+		background: #f69988;
+	}
+	10% {
+		background: #ce93d8;
+	}
+	20% {
+		background: #b39ddb;
+	}
+	30% {
+		background: #9fa8da;
+	}
+	40% {
+		background: #afbfff;
+	}
+	50% {
+		background: #81d4fa;
+	}
+	60% {
+		background: #80deea;
+	}
+	70% {
+		background: #80cdc4;
+	}
+	80% {
+		background: #c5e1a5;
+	}
+	90% {
+		background: #fff59d;
+	}
+	100% {
+		background: #f69988;
+	}
+}
+@keyframes changeBG {
+	0% {
+		background: #f69988;
+	}
+	10% {
+		background: #ce93d8;
+	}
+	20% {
+		background: #b39ddb;
+	}
+	30% {
+		background: #9fa8da;
+	}
+	40% {
+		background: #afbfff;
+	}
+	50% {
+		background: #81d4fa;
+	}
+	60% {
+		background: #80deea;
+	}
+	70% {
+		background: #80cdc4;
+	}
+	80% {
+		background: #c5e1a5;
+	}
+	90% {
+		background: #fff59d;
+	}
+	100% {
+		background: #f69988;
+	}
+}
+html,body {
+	margin: 0;
+	height: 100%;
+	min-width: 200px;
+	min-height: 70px;
+}
+body {
+	animation: changeBG 40s ease-in-out 0s infinite;
+	-webkit-animation: changeBG 40s ease-in-out 0s infinite;
+	/* use flexible layout to center the card without table*/
+	display: flex;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+}
+/*.container_table {
+width: 100%;
+height: 100%;
+vertical-align: center;
+}*/
+.card {
+	width: 248px;
+	height: 400px;
+	margin: auto;
+	/*box-shadow: 0.5px 2px 6px 1px #666;*/
+	box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+	-webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+	-moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+	border-radius: 3px;
+	background: white;
+	position: relative;
+	transition: all 0.3s ease 0s;
+	-webkit-transition: all 0.3s ease 0s;
+	-moz-transition: all 0.3s ease 0s;
+	-ms-transition: all 0.3s ease 0s;
+	-o-transition: all 0.3s ease 0s;
+}
+.card::before, .card::after {
+	content: "";
+	position: absolute;
+	z-index: -1;
+	box-shadow: 0 0 20px rgba(0,0,0,0.6);
+	-webkit-box-shadow: 0 0 20px rgba(0,0,0,0.6);
+	-moz-box-shadow: 0 0 20px rgba(0,0,0,0.6);
+	top: 35%;
+	bottom: 10px;
+	left: 15px;
+	right: 15px;
+	border-radius: 100px/10px;
+}
+.card:hover {
+	/*-webkit-transform: scale(1.01, 1.01);*/
+	box-shadow: 0 2px 15px 2px rgba(0, 0, 0, 0.4), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+	-webkit-box-shadow: 0 2px 15px 2px rgba(0, 0, 0, 0.4), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+	-moz-box-shadow: 0 2px 15px 2px rgba(0, 0, 0, 0.4), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+}
+.portrait {
+	width: 80px;
+	height: 80px;
+	background: url("../images/portrait.jpg") top/cover;
+	border-radius: 40px;
+	/*box-shadow: 0.2px 0.4px 1px 0.5px #333;*/
+	box-shadow: 0 0.7px 3px 0.5px #888 inset;
+	-webkit-box-shadow: 0 0.7px 3px 0.5px #888 inset;
+	-moz-box-shadow: 0 0.7px 3px 0.5px #888 inset;
+	position: relative;
+	top: 30px;
+	left: 84px;
+}
+.portrait a {
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+.name {
+	position: relative;
+	height: 30px;
+	color: #444;
+	font-family: "Exo", sans-serif;
+	font-size: 20px;
+	font-weight: bold;
+	line-height: 30px;
+	top: 40px;
+	text-align: center;
+}
+.partitionLine {
+	width: 80%;
+	position: relative;
+	top: 35px;
+	border: 1px solid #888;
+}
+.intro {
+	position: relative;
+	font-family: "Courgette", Arial, sans-serif;
+	font-size: 18px;
+	color: #333;
+	line-height: 20px;
+	margin: 55px 20px 20px 20px;
+	text-align: center;
+}
+.intro p:first-child {
+	margin-bottom: -10px;
+}
+.social {
+	position: relative;
+	text-align: center;
+	top: -6px;
+}
+.social a {
+	display: inline-block;
+	margin: 5px;
+	font-family: "Exo", sans-serif;
+	font-size: 14px;
+	color: #039be5;
+	text-decoration: none;
+	transition: color 0.3s ease 0s;
+	-webkit-transition: color 0.3s ease 0s;
+	-moz-transition: color 0.3s ease 0s;
+	-ms-transition: color 0.3s ease 0s;
+	-o-transition: color 0.3s ease 0s;
+}
+.social a:hover {
+	color: #01579b;
+	text-decoration: underline;
+}
+@media screen and (max-height: 440px) and (min-width: 460px) and (min-height: 261px) {
+	.card {
+		width: 400px;
+		height: 220px;
+	}
+	.portrait {
+		top: 34px;
+		left: 48px;
+	}
+	.name {
+		width: 44%;
+		top: 44px;
+	}
+	.partitionLine {
+		position: absolute;
+		width: 46%;
+		top: 102px;
+		left: 20%;
+		transform: rotate(90deg);
+		-webkit-transform: rotate(90deg);
+		-moz-transform: rotate(90deg);
+		-ms-transform: rotate(90deg);
+		-o-transform: rotate(90deg);
+	}
+	.intro {
+		width: 46%;
+		float: right;
+		margin: -102px 20px;
+	}
+	.social {
+		float: left;
+		top: 56px;
+		/*left: 27px;*/
+		width: 174px;
+	}
+	.social a {
+		margin: 1px;
+	}
+}
+@media screen and (max-height: 440px) and (max-width: 459px) {
+	.card {
+		height: 248px;
+	}
+	.card::before, .card::after {
+		display: none;
+	}
+	.intro p:last-child {
+		display: none;
+	}
+}
+@media screen and (max-height: 260px) {
+	.card {
+		height: 168px;
+		width: 248px;
+	}
+	.portrait {
+		top: 18px;
+	}
+	.name {
+		top: 20px;
+	}
+	.partitionLine {
+		display: none;
+	}
+	.intro p {
+		display: none;
+	}
+	.social {
+		top: -38px;
+	}
+}
+@media screen and (max-height: 180px) {
+	.card {
+		height: 68px;
+		width: 200px;
+	}
+	.portrait {
+		display: none;
+	}
+	.name {
+		top: 10px;
+	}
+	.social {
+		top: -50px;
+	}
+}
+@media screen and (min-height: 260px) and (max-width: 260px) {
+	.card {
+		width: 160px;
+		height: 248px;
+	}
+	.portrait {
+		top: 20px;
+		left: 40px;
+	}
+	.name {
+		top: 30px;
+	}
+	.name span {
+		display: block;
+	}
+	.name span[id="lastName"] {
+		position: relative;
+		top: -10px;
+	}
+	.partitionLine {
+		width: 70%;
+		top: 44px;
+	}
+	.intro p {
+		display: none;
+	}
+	.social {
+		top: 0px;
+	}
+	.social a {
+		display: block;
+		margin: 0;
+	}
+}
+@media screen and (min-height: 180px) and (max-width: 260px) {
+	.card {
+		height: 168px;
+		width: 80px;
+	}
+	.portrait {
+		display: none;
+	}
+	.name {
+		top: 30px;
+	}
+	.name span {
+		display: block;
+	}
+	.name span[id="lastName"] {
+		position: relative;
+		top: -10px;
+	}
+	.partitionLine {
+		display: none;
+	}
+	.social {
+		top: 0px;
+	}
+	.social a {
+		display: block;
+		margin: 0;
+	}
+}
